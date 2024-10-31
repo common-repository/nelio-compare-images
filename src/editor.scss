@@ -1,0 +1,29 @@
+#editor .wp-block-nelio-compare-images {
+
+	&__comparison-wrapper--is-image-missing {
+
+		display: flex;
+		flex-direction: column;
+
+		.wp-block-nelio-compare-images__before-image {
+			margin-bottom: 10px;
+			height: auto;
+			position: relative;
+		}
+
+		.wp-block-nelio-compare-images__after-image {
+			height: auto;
+			position: relative;
+		}
+
+	}
+
+	&__divider {
+		cursor: default;
+		opacity: 1;
+	}
+
+	&__handler {
+		display: none;
+	}
+}

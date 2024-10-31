@@ -1,0 +1,141 @@
+.wp-block-nelio-compare-images {
+
+	&__comparison-wrapper {
+		position: relative;
+	}
+
+	&__before-image,
+	&__after-image {
+		line-height: 0;
+	}
+
+	&__before-image {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+
+		img {
+			height: 100%;
+			margin: 0;
+			object-fit: cover;
+			padding: 0;
+			width: 100%;
+		}
+	}
+
+	&__after-image {
+		position: absolute;
+		img {
+			height: 100%;
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+
+	&__after-image--horizontal {
+		bottom: 0;
+		height: 100%;
+		right: 0;
+		top: 0;
+		img {
+			object-position: top right;
+		}
+	}
+
+	&__after-image--vertical {
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		right: 0;
+		width: 100%;
+		img {
+			object-position: bottom left;
+		}
+	}
+
+	&__divider {
+		font-size: 2px;
+		position: absolute;
+		transition: opacity 200ms ease-in-out;
+
+		&--vertical {
+			background: #fff;
+			height: 100%;
+			top: 0;
+			width: 1em;
+		}
+
+		&--horizontal {
+			background: #fff;
+			height: 1em;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	&__handler {
+		background: #fff;
+		color: #bbb;
+		cursor: pointer;
+		filter: drop-shadow(0 0 10px #001);
+		font-size: 5px;
+		position: absolute;
+		transition: opacity 200ms ease-in-out;
+		user-select: none;
+
+		&:after {
+			align-items: center;
+			background: inherit;
+			border-radius: 1em;
+			content: "☰";
+			display: block;
+			display: flex;
+			font-size: 16px;
+			height: 1.5em;
+			justify-content: center;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%) rotate(90deg);
+			width: 6em;
+		}
+
+		&--vertical {
+			height: 100%;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+			width: 1em;
+		}
+
+		&--horizontal {
+			height: 1em;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 100%;
+
+			&:after {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+		}
+	}
+
+	&__caption {
+		text-align: center;
+		width: 100%;
+	}
+
+	@media (min-width: 50em) {
+		&__handler {
+			opacity: 0;
+		}
+		&:hover {
+			.wp-block-nelio-compare-images__handler {
+				opacity: 1;
+			}
+		}
+	}
+
+}

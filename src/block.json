@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "nelio/compare-images",
+	"title": "Compare Images",
+	"category": "common",
+	"icon": "image-flip-horizontal",
+	"description": "Compare two images side by side using a slider.",
+	"keywords": [ "compare", "image" ],
+	"version": "1.0.0",
+	"textdomain": "nelio-compare-images",
+	"attributes": {
+		"align": {
+			"type": "string"
+		},
+		"beforeId": {
+			"type": "number"
+		},
+		"beforeUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-nelio-compare-images__before-image img",
+			"attribute": "src"
+		},
+		"beforeAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-nelio-compare-images__before-image img",
+			"attribute": "alt",
+			"default": ""
+		},
+		"afterId": {
+			"type": "number"
+		},
+		"afterUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-nelio-compare-images__after-image img",
+			"attribute": "src"
+		},
+		"afterAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".wp-block-nelio-compare-images__after-image img",
+			"attribute": "alt",
+			"default": ""
+		},
+		"dividerLocation": {
+			"type": "number",
+			"default": 50
+		},
+		"caption": {
+			"type": "string",
+			"source": "html",
+			"selector": "figcaption"
+		},
+		"isVertical": {
+			"type": "boolean",
+			"default": false
+		},
+		"sizeSlug": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"align": [ "left", "center", "right", "wide", "full" ]
+	},
+	"viewScript": "file:view.js",
+	"editorScript": "file:index.js",
+	"editorStyle": "file:index.css",
+	"style": "file:style-index.css"
+}
